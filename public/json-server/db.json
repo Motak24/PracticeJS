@@ -3,8 +3,21 @@
     {
       "id": "dcc9",
       "username": "demgerall",
-      "password": "123123"
+      "password": "123123",
+      "fullName": "Иванов Иван Иванович",
+      "phone": "+79995554433",
+      "email": "test@mail.ru"
     }
   ],
-  "statements": []
+
+  "statements": [
+    {
+      "id": "a17f",
+      "userId": "dcc9",
+      "carNumber": "А001АА 77",
+      "description": "Неправильная парковка во дворе",
+      "status": "new",
+      "createdAt": "2025-06-27T12:00:00"
+    }
+  ]
 }
