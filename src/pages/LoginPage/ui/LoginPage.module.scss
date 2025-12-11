@@ -1,0 +1,30 @@
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  background-color: red;
+
+  &__title {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 600;
+  }
+
+  &__content {
+    width: 50%;
+    height: 100%;
+    padding: 10%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}

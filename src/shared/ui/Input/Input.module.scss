@@ -1,0 +1,54 @@
+.input {
+  height: 64px;
+  max-width: 432px;
+  padding: 10px 12px;
+  display: flex;
+  background-color: #EFF0F6;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+
+  &--inputWithFocus {
+    background-color: #fff;
+    border: 1px solid #000;
+  }
+
+  .inputWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .inputLabel {
+      width: 100%;
+      height: 100%;
+      color: #6E7191;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .inputField {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      font-size: 16px;
+      line-height: 20px;
+
+      &::placeholder {
+        color: #6E7191;
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.inputControl {
+  width: 24px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
