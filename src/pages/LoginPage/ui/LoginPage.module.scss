@@ -1,21 +1,60 @@
+@use '../../../App/styles/variables/fonts' as fonts;
+@use '../../../App/styles/variables/colors' as colors;
+
 .loginPage {
+  font-family: fonts.$font-family-main;
+
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: flex-end;
-  background-color: red;
+
+  background-color: colors.$primary--darkmode;
+  background-image: url('../../../shared/assets/images/login-page-bg.png');
+
+ &__logo {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logoWrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+  }
+
+  &__logoImage {
+
+    width: 92px;
+    height: 92px;
+  }
+
+  &__logoText {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    
+    color: colors.$primary--dark;
+  }
+
 
   &__title {
     font-size: 48px;
     line-height: 56px;
     font-weight: 600;
+    color: colors.$gray-scale--off-white;
   }
 
   &__content {
     width: 50%;
     height: 100%;
     padding: 10%;
-    background-color: white;
+    background-color: colors.$gray-scale--ash;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,4 +66,6 @@
     flex-direction: column;
     gap: 24px;
   }
+
+
 }

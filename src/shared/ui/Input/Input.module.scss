@@ -1,9 +1,12 @@
+@use '../../../App/styles/variables/fonts' as fonts;
+@use '../../../App/styles/variables/colors' as colors;
+
 .input {
   height: 64px;
   max-width: 432px;
   padding: 10px 12px;
   display: flex;
-  background-color: #EFF0F6;
+  background-color: colors.$gray-scale--body;
   border-radius: 16px;
   transition: all 0.3s ease-in-out;
 
@@ -21,7 +24,7 @@
     .inputLabel {
       width: 100%;
       height: 100%;
-      color: #6E7191;
+      color: colors.$gray-scale--label;
       font-size: 16px;
       line-height: 20px;
     }
@@ -36,7 +39,7 @@
       line-height: 20px;
 
       &::placeholder {
-        color: #6E7191;
+        color: colors.$gray-scale--label;
         font-size: 20px;
         line-height: 32px;
       }
