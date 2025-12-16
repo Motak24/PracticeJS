@@ -8,95 +8,49 @@ import React, {
 
 import styles           from './Button.module.scss'
 
-type ButtonVariant =
-  | 'primary'
-  | 'secondary'
-  | 'outline'
-  | 'ghost'
-  | 'danger'
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text';
+type ButtonSize    = 'xs' | 's' | 'm' | 'l';
 
-type ButtonSize =
-  | 'xs'
-  | 's'
-  | 'm'
-  | 'l'
-
-interface TButton
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
-  onClick?: (e: MouseEvent<HTMLButtonElement>) => void
-  variant?: ButtonVariant
-  size?: ButtonSize
-  fullWidth?: boolean
-  loading?: boolean
-  leftIcon?: ReactNode
-  rightIcon?: ReactNode
-  className?: string
+interface TButton extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
+  onClick:       (e: MouseEvent<HTMLButtonElement>) => void;
+  className?:    string;
+  variant?:      ButtonVariant;
+  size?:         ButtonSize;
+  icon?:         ReactNode;
 }
 
 export const Button = (props: TButton) => {
   const {
     onClick,
-    variant = 'primary',
-    size = 'm',
-    fullWidth = false,
-    loading = false,
-    disabled = false,
-    leftIcon,
-    rightIcon,
     children,
     className = '',
-    type = 'button',
+    disabled  = false,
+    variant   = 'primary',
+    size      = 'm',
+    icon,
     ...otherProps
   } = props
 
-  const isDisabled = disabled || loading
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    if (isDisabled) {
-      e.preventDefault()
-      return
+    if (disabled) {
+      e.preventDefault();
+      return;
     }
 
-    onClick?.(e)
+    onClick(e);
   }
 
   return (
     <button
-      type={type}
-      disabled={isDisabled}
-      onClick={handleClick}
-      className={cn(
-        styles.button,
-        styles[`button--${variant}`],
-        styles[`button--${size}`],
-        {
-          [styles['button--fullWidth']]: fullWidth,
-          [styles['button--loading']]: loading,
-          [styles['button--disabled']]: isDisabled,
-          [styles['button--iconOnly']]:
-            !children && (leftIcon || rightIcon),
-        },
-        className
-      )}
+      className = {cn(styles.button, styles[`button--${variant}`], styles[`button--${size}`], className, {
+          [styles['button--disabled']]: disabled,
+      })}
+      disabled  = {disabled}
+      onClick   = {handleClick}
       {...otherProps}
     >
-      {leftIcon && (
-        <span className={styles.buttonIcon}>
-          {leftIcon}
-        </span>
-      )}
-
-      {children && (
-        <span className={styles.buttonLabel}>
-          {children}
-        </span>
-      )}
-
-      {rightIcon && (
-        <span className={styles.buttonIcon}>
-          {rightIcon}
-        </span>
-      )}
+      {children}
     </button>
   )
 }

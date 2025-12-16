@@ -1,28 +1,25 @@
 import React, { useState } from 'react'
 
-import { Input }            from '@/shared/ui/Input'
+import LogoIcon            from '@/shared/assets/icons/LogoPlaceholder.svg'
+import { Button }          from '@/shared/ui/Button'
+import { Input }           from '@/shared/ui/Input'
+import { Link }            from '@/shared/ui/Link'
 
-import styles               from './LoginPage.module.scss'
-
-import logo                 from '../../../shared/assets/icons/LogoPlaceholder.svg'
-
-import { Button }           from '@/shared/ui/Button'
+import styles              from './LoginPage.module.scss'
 
 export const LoginPage = () => {
   const [login,    setLogin]    = useState('')
   const [password, setPassword] = useState('')
 
+  const handleButtonClick = () => {}
+
   return (
     <main className = {styles.loginPage}>
 
-    <section className={styles.loginPage__logo}>
-        <div className={styles.loginPage__logoWrapper}>
-          <img
-            src= {logo}
-            alt= "Logo"
-            className={styles.loginPage__logoImage}
-          />
-          <h1 className={styles.loginPage__logoText}>
+    <section className = {styles.loginPage__logo}>
+        <div className = {styles.loginPage__logoWrapper}>
+          <LogoIcon />
+          <h1 className = {styles.loginPage__logoText}>
             Портал нарушений
           </h1>
         </div>
@@ -33,22 +30,23 @@ export const LoginPage = () => {
         <form className = {styles.loginPage__form}>
           <Input
             placeholder = "Login"
-            onChange     = {(value) => setLogin(value)}
+            onChange    = {(value) => setLogin(value)}
             value       = {login}
             type        = "text"
             showClear
           />
           <Input
             placeholder = "Password"
-            onChange     = {(value) => setPassword(value)}
+            onChange    = {(value) => setPassword(value)}
             value       = {password}
             type        = "password"
             showPassword
           />
-         <Button onClick={() => console.log('click')}>
-          Log In
+         <Button onClick = {handleButtonClick}>
+            Log In
           </Button>
         </form>
+        <Link to = "/register">Register</Link>
       </section>
     </main>
   )
