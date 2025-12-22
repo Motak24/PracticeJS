@@ -1,3 +1,125 @@
 @use '../../../App/styles/variables/fonts';
 @use '../../../App/styles/variables/colors';
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: fonts.$font-family-main;
+  font-weight: 500;
+  line-height: 1;
+
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+
+  &--xs {
+    height: 40px;
+    width: 106px;
+
+    gap: 12px;
+    padding: 16 9px;
+    font-size: 12px;
+  }
+
+  &--s {
+    height: 56px;
+    width: 139px;
+
+    gap: 12px;
+    padding: 24 16px;
+    font-size: 14px;
+  }
+
+  &--m {
+    height: 64px;
+    width: 159px;
+
+    gap: 16px;
+    padding: 32 20px;
+    font-size: 16px;
+  }
+
+  &--l {
+    height: 72px;
+    width: 169px;
+
+    gap: 16px;
+    padding: 32 20px;
+    font-size: 18px;
+  }
+
+  &--primary {
+    background-color: colors.$primary--darkmode;
+    color: colors.$primary--dark;
+
+
+    &:hover:not(.button--disabled) {
+      background-color: colors.$primary--light;
+    }
+
+    &:active:not(.button--disabled) {
+      background-color: colors.$primary--darkmode;
+    }
+  }
+
+  &--secondary {
+    background-color: colors.$secondary--default;
+    color: colors.$gray-scale--off-white;
+
+    &:hover:not(.button--disabled) {
+      background-color: colors.$secondary--dark;
+    }
+
+    &:active:not(.button--disabled) {
+      background-color: colors.$secondary--darkmode;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: colors.$primary--default;
+    border: 1px solid colors.$primary--default;
+
+    &:hover:not(.button--disabled) {
+      background-color: colors.$primary--BG;
+    }
+
+    &:active:not(.button--disabled) {
+      background-color: colors.$primary--light;
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    color: colors.$primary--default;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &:hover:not(.button--disabled) {
+      background-color: colors.$primary--BG;
+    }
+
+    &:active:not(.button--disabled) {
+      background-color: colors.$primary--light;
+    }
+  }
+
+  &--disabled {
+    cursor: default;
+    opacity: 1;
+
+    background-color: colors.$gray-scale--input;
+    color: colors.$gray-scale--placehold;
+    border-color: colors.$gray-scale--line;
+
+    pointer-events: none;
+  }
+}

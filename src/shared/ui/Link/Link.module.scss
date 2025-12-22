@@ -1,0 +1,30 @@
+@use '../../../App/styles/variables/fonts';
+@use '../../../App/styles/variables/colors';
+
+.link {
+  font-family: fonts.$font-family-main;
+  font-size: 16px;
+  font-weight: 500;
+
+  color: colors.$primary--darkmode;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    color: colors.$gray-scale--off-white;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px colors.$primary--light;
+    border-radius: 4px;
+  }
+
+  &:active {
+    color:colors.$gray-scale--off-white;
+  }
+}

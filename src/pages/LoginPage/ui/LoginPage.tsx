@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import LogoIcon            from '@/shared/assets/icons/LogoPlaceholder.svg'
+import ArrowRightIcon      from '@/shared/assets/icons/ArrowRight.svg'
 import { Button }          from '@/shared/ui/Button'
 import { Input }           from '@/shared/ui/Input'
 import { Link }            from '@/shared/ui/Link'
@@ -42,11 +43,22 @@ export const LoginPage = () => {
             type        = "password"
             showPassword
           />
-         <Button onClick = {handleButtonClick}>
-            Log In
+         <Button 
+          onClick   = {handleButtonClick}
+          size      = "l"
+          variant   = "primary"
+          className = {styles.loginButton}
+          >
+
+          <span className={styles.loginButtonContent}>
+          <span>Log In</span>
+          <ArrowRightIcon />
+          </span>
           </Button>
+          
         </form>
-        <Link to = "/register">Register</Link>
+        <p> Don`t Already have an account?</p>
+        <Link to = "/register">Create an account</Link>
       </section>
     </main>
   )

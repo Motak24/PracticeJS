@@ -8,10 +8,14 @@
   height: 100vh;
   display: flex;
   justify-content: flex-end;
-
+  
   background-color: colors.$primary--darkmode;
   background-image: url('../../../shared/assets/images/login-page-bg.png');
-
+  
+  p{
+    color: colors.$gray-scale--line;
+  }
+  
  &__logo {
     width: 50%;
     height: 100%;
@@ -62,10 +66,22 @@
   }
 
   &__form {
+
     display: flex;
     flex-direction: column;
     gap: 24px;
   }
 
+
+  .loginButton {
+  width: 75%;
+}
+
+.loginButtonContent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; 
+}
 
 }
