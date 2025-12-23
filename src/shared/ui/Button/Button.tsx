@@ -10,7 +10,7 @@ import styles           from './Button.module.scss';
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text';
 type ButtonSize    = 'xs' | 's' | 'm' | 'l';
 
-interface TButton extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
+interface TButton extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'type'> {
   children:      ReactNode;
   onClick:       (e: MouseEvent<HTMLButtonElement>) => void;
   className?:    string;
@@ -46,6 +46,7 @@ export const Button = (props: TButton) => {
       })}
       disabled  = {disabled}
       onClick   = {handleClick}
+      type      = "button"
       {...otherProps}
     >
       {children}

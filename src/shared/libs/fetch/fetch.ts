@@ -31,7 +31,7 @@ export const loginFetch = async (body: TLoginData, options?: RequestInit): Promi
   const token = btoa(response.data.userId + ':' + new Date().toISOString());
 
   return {
-    ...response.data,
+    ...response,
     token
   }
 }
