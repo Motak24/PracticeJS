@@ -2,7 +2,7 @@
 @use '../../../App/styles/variables/colors';
 
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -21,38 +21,26 @@
     opacity 0.3s ease;
 
   &--xs {
-    height: 40px;
-    width: 106px;
-
     gap: 12px;
-    padding: 16 9px;
+    padding: 9px 16px;
     font-size: 12px;
   }
 
   &--s {
-    height: 56px;
-    width: 139px;
-
     gap: 12px;
-    padding: 24 16px;
+    padding: 16px 24px;
     font-size: 14px;
   }
 
   &--m {
-    height: 64px;
-    width: 159px;
-
     gap: 16px;
-    padding: 32 20px;
+    padding: 20px 32px;
     font-size: 16px;
   }
 
   &--l {
-    height: 72px;
-    width: 169px;
-
     gap: 16px;
-    padding: 32 20px;
+    padding: 20px 32px;
     font-size: 18px;
   }
 

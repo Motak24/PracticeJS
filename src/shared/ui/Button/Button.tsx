@@ -1,33 +1,31 @@
 import cn               from 'classnames'
-
 import React, {
   ButtonHTMLAttributes,
   MouseEvent,
   ReactNode
-}                       from 'react'
+}                       from 'react';
 
-import styles           from './Button.module.scss'
+import styles           from './Button.module.scss';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text';
 type ButtonSize    = 'xs' | 's' | 'm' | 'l';
 
 interface TButton extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
+  children:      ReactNode;
   onClick:       (e: MouseEvent<HTMLButtonElement>) => void;
   className?:    string;
   variant?:      ButtonVariant;
   size?:         ButtonSize;
-  icon?:         ReactNode;
 }
 
 export const Button = (props: TButton) => {
   const {
-    onClick,
     children,
+    onClick,
     className = '',
     disabled  = false,
     variant   = 'primary',
     size      = 'm',
-    icon,
     ...otherProps
   } = props
 

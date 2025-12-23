@@ -33,7 +33,6 @@
   }
 
   &__logoImage {
-
     width: 92px;
     height: 92px;
   }
@@ -73,9 +72,8 @@
   }
 
 
-  .loginButton {
-  width: 428px;
-  height: 72px;
+.loginButton {
+  width: 100%;
 }
 
 .loginButtonContent {
@@ -84,7 +82,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px; 
+  gap: 16px;
 }
 
 }

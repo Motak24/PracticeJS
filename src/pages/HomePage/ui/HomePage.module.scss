@@ -1,0 +1,39 @@
+@use '../../../App/styles/variables/fonts';
+@use '../../../App/styles/variables/colors';
+
+.homePage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logoWrapper {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+  }
+
+  &__logoImage {
+    width: 92px;
+    height: 92px;
+  }
+
+  &__logoText {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 72px;
+    
+    color: colors.$primary--dark;
+  }
+}

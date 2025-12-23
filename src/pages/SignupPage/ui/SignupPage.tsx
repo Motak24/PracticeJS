@@ -18,65 +18,63 @@ export const SignupPage = () => {
   const handleSubmit = () => {}
 
   return (
-    <main className={styles.signupPage}>
-      <header className={styles.signupPage__header}>
+    <main className = {styles.signupPage}>
+      <header className = {styles.signupPage__header}>
         <LogoIcon />
-        <span className={styles.signupPage__appName}>Портал нарушений</span>
+        <span className = {styles.signupPage__appName}>Портал нарушений</span>
       </header>
 
-      <section className={styles.signupPage__card}>
-        <h1 className={styles.signupPage__title}>Sign Up</h1>
+      <section className = {styles.signupPage__card}>
+        <h1 className = {styles.signupPage__title}>Sign Up</h1>
 
-        <form className={styles.signupPage__form}>
-          <div className={styles.signupPage__row}>
+        <form className = {styles.signupPage__form}>
+          <div className = {styles.signupPage__row}>
             <Input
-              placeholder="First Name"
-              value={firstName}
-              onChange={setFirstName}
+              placeholder = "First Name"
+              onChange    = {setFirstName}
+              value       = {firstName}
               showClear
             />
             <Input
-              placeholder="Last Name"
-              value={lastName}
-              onChange={setLastName}
+              placeholder = "Last Name"
+              onChange    = {setLastName}
+              value       = {lastName}
               showClear
             />
           </div>
 
           <Input
-            placeholder="Email Address"
-            type="email"
-            value={email}
-            onChange={setEmail}
+            placeholder = "Email Address"
+            onChange    = {setEmail}
+            value       = {email}
+            type        = "email"
             showClear
           />
 
           <Input
-            placeholder="Create a Password"
-            type="password"
-            value={password}
-            onChange={setPassword}
+            placeholder = "Create a Password"
+            onChange    = {setPassword}
+            value       = {password}
+            type        = "password"
             showPassword
           />
 
           <Input
-            placeholder="Confirm Password"
-            type="password"
-            value={confirm}
-            onChange={setConfirm}
+            placeholder = "Confirm Password"
+            onChange    = {setConfirm}
+            value       = {confirm}
+            type        = "password"
             showPassword
           />
 
           <Button
-            size="l"
-            variant="primary"
-            onClick={handleSubmit}
-            className={styles.signupPage__button}
+            className = {styles.signupPage__button}
+            variant   = "primary"
+            onClick   = {handleSubmit}
+            size      = "l"
           >
-            <span className={styles.signupPage__buttonContent}>
-              Sign Up
-              <ArrowRightIcon />
-            </span>
+            Sign Up
+            <ArrowRightIcon />
           </Button>
         </form>
 

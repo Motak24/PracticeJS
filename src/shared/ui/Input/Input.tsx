@@ -34,6 +34,7 @@ export const Input = (props: TInput) => {
   } = props;
 
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [focused,         setFocused]         = useState(false);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (disabled) {
@@ -45,19 +46,30 @@ export const Input = (props: TInput) => {
 
   const handleClearInput = () => {
     onChange('');
+    setFocused(false);
+  }
+
+  const handleOnFocus = () => {
+    setFocused(true);
+  }
+
+  const handleOnBlur = () => {
+    setFocused(false);
   }
 
   return (
     <div
       className = {cn(styles.input, className, {
-        [styles['input--inputWithFocus']]: value,
+        [styles['input--inputWithFocus']]: value || focused,
         [styles['input--disabled']]:       disabled
       })}
+      onFocus   = {handleOnFocus}
+      onBlur    = {handleOnBlur}
     >
       <div className = {styles.inputWrapper}>
-        {value && <p className = {styles.inputLabel}>{placeholder}</p>}
+        {(value || focused) && <p className = {styles.inputLabel}>{placeholder}</p>}
         <input
-          placeholder = {placeholder}
+          placeholder = {focused ? '' : placeholder}
           className   = {cn(styles.inputField)}
           onChange    = {handleInputChange}
           value       = {value}
