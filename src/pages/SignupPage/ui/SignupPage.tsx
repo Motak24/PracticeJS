@@ -33,11 +33,13 @@ export const SignupPage = () => {
               placeholder="First Name"
               value={firstName}
               onChange={setFirstName}
+              showClear
             />
             <Input
               placeholder="Last Name"
               value={lastName}
               onChange={setLastName}
+              showClear
             />
           </div>
 
@@ -46,6 +48,7 @@ export const SignupPage = () => {
             type="email"
             value={email}
             onChange={setEmail}
+            showClear
           />
 
           <Input
