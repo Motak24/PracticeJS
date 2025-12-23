@@ -11,8 +11,8 @@
   transition: all 0.3s ease-in-out;
 
   &--inputWithFocus {
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: transparent;
+    border: 1px solid colors.$gray-scale--line;
   }
 
   .inputWrapper {
@@ -24,7 +24,7 @@
     .inputLabel {
       width: 100%;
       height: 100%;
-      color: colors.$gray-scale--label;
+      color: colors.$gray-scale--line;
       font-size: 16px;
       line-height: 20px;
     }
@@ -33,8 +33,11 @@
       width: 100%;
       height: 100%;
       border: none;
+
+      color: colors.$gray-scale--off-white;
       background-color: transparent;
       outline: none;
+      
       font-size: 16px;
       line-height: 20px;
 

@@ -51,13 +51,13 @@ export const LoginPage = () => {
           >
 
           <span className={styles.loginButtonContent}>
-          <span>Log In</span>
+          Log In
           <ArrowRightIcon />
           </span>
           </Button>
           
         </form>
-        <p> Don`t Already have an account?</p>
+        <p> Don`t already have an account?</p>
         <Link to = "/register">Create an account</Link>
       </section>
     </main>
