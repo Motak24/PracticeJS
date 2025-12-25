@@ -1,6 +1,18 @@
-import { createAsyncThunk, createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, SerializedError } from "@reduxjs/toolkit";
 
-import { loginFetch, TLoginRequest, type TLoginData }   from '@/shared/libs/fetch/fetch'
+import { loginFetch, sessionFetch, type TLoginData }      from '@/shared/libs/fetch/fetch'
+
+export const recoverSession = createAsyncThunk(
+  'user/recoverSession',
+  async (token: string, thunkAPI) => {
+    try {
+      const response = await sessionFetch(token);
+      return response;
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  }
+)
 
 export const loginUser = createAsyncThunk(
   'user/loginUser',
@@ -15,20 +27,20 @@ export const loginUser = createAsyncThunk(
 )
 
 interface TUserSliceInitialState {
-  userId:    string;
-  email:     string;
+  isLoading: boolean;
   firstName: string;
   lastName:  string;
-  isLoading: boolean;
-  error?:    SerializedError;
+  userId:    string;
+  email:     string;
+  error?:    string;
 }
 
 const userSliceInitialState: TUserSliceInitialState = {
-  userId:    '',
-  email:     '',
+  isLoading: false,
   firstName: '',
   lastName:  '',
-  isLoading: false,
+  userId:    '',
+  email:     '',
 };
 
 export const userSlice = createSlice({
@@ -53,9 +65,30 @@ export const userSlice = createSlice({
         })
         .addCase(loginUser.rejected, (state, action) => {
           state.isLoading = false;
-          state.error    = action.error;
+          state.error    = action.error.message;
 
           console.error('Login failed:', action.error.message);
+        })
+        
+        .addCase(recoverSession.pending, state => {
+          state.isLoading = true;
+        })
+        .addCase(recoverSession.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error     = undefined;
+
+          state.userId    = action.payload.userId;
+          state.email     = action.payload.email;
+          state.firstName = action.payload.firstName;
+          state.lastName  = action.payload.lastName;
+
+          sessionStorage.setItem('token', action.payload.token);
+        })
+        .addCase(recoverSession.rejected, (state, action) => {
+          state.isLoading = false;
+          state.error    = action.error.message;
+
+          console.error('Session recovery failed:', action.error.message);
         })
     }
 })

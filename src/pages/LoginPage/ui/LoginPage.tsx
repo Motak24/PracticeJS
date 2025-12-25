@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import LogoIcon            from '@/shared/assets/icons/LogoPlaceholder.svg';
 import ArrowRightIcon      from '@/shared/assets/icons/ArrowRight.svg';
-import { loginFetch }      from '@/shared/libs/fetch/fetch';
-import { useAppDispatch }  from '@/shared/libs/hooks/rtkHooks';
+import { loginUser }       from '@/shared/api/userSlice';
+import { useAppDispatch, useAppSelector }  from '@/shared/libs/hooks/rtkHooks';
 import { Button }          from '@/shared/ui/Button';
 import { Input }           from '@/shared/ui/Input';
 import { Link }            from '@/shared/ui/Link';
@@ -16,9 +16,17 @@ export const LoginPage = () => {
   const [email,    setEmail]    = useState('');
   const [password, setPassword] = useState('');
 
+  const currentUserId = useAppSelector(state => state.user.userId);
+
   const handleButtonClick = () => {
-    dispatch(loginFetch({email, password}));
+    dispatch(loginUser({email, password}));
   };
+
+  useEffect(() => {
+    if (currentUserId) {
+      window.location.href = '/my-statements';
+    }
+  }, [ currentUserId ]);
 
   return (
     <main className = {styles.loginPage}>

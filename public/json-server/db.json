@@ -1,12 +1,24 @@
 {
-  "users":      [
+  "users": [
     {
-      "userId":    "1",
-      "email":     "example.com",
-      "password":  "123",
+      "userId": "1",
+      "email": "example.com",
+      "password": "123",
       "firstName": "Gon",
-      "lastName":  "Don"
+      "lastName": "Don"
     }
   ],
-  "statements": []
+  "statements": [],
+  "tokens": [
+    {
+      "id": "0971",
+      "userId": "1",
+      "token": "MToyMDI1LTEyLTI1VDE3OjAwOjEzLjkzOVo="
+    },
+    {
+      "id": "4fd6",
+      "userId": "1",
+      "token": "MToyMDI1LTEyLTI1VDE3OjAzOjI0LjY1NVo="
+    }
+  ]
 }
