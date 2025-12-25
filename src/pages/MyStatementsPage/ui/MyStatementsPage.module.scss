@@ -1,0 +1,89 @@
+@use '../../../App/styles/variables/fonts';
+@use '../../../App/styles/variables/colors';
+
+.myStatementsPage {
+  font-family: fonts.$font-family-main;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: colors.$gray-scale--ash;
+
+  background-image: url('../../../shared/assets/images/sign-up-page-bg.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myStatementsPage__logo {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myStatementsPage__logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.myStatementsPage__logoText {
+  font-size: 48px;
+  font-weight: 600;
+  color: colors.$gray-scale--off-white;
+}
+
+.myStatementsPage__content {
+  width: 100%;
+  max-width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  padding: 0 32px 64px;
+  align-items: center;
+}
+
+.myStatementsPage__card {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 24px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+
+  border: 2px solid colors.$gray-scale--off-white;
+}
+
+.myStatementsPage__title {
+  font-size: 28px;
+  font-weight: 600;
+  color: colors.$gray-scale--off-white;
+}
+
+.myStatementsPage__status {
+  font-size: 16px;
+  color: colors.$gray-scale--line;
+}
+
+.myStatementsPage__link {
+  color: colors.$primary--default;
+  text-decoration: none;
+  margin-top: 8px;
+
+  &:hover {
+    color: colors.$primary--light;
+  }
+}

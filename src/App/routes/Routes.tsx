@@ -1,11 +1,12 @@
 import React, { Suspense } from 'react';
 import { Route, Routes }   from 'react-router-dom';
 
-import { HomePage }        from '@/pages/HomePage';
-import { SignupPage }      from '@/pages/SignupPage';
-import { LoginPage }       from '@/pages/LoginPage';
-import { ROUTES }          from '@/shared/routes/routes';
-
+import { HomePage }         from '@/pages/HomePage';
+import { SignupPage }       from '@/pages/SignupPage';
+import { LoginPage }        from '@/pages/LoginPage';
+import { MyStatementsPage } from '@/pages/MyStatementsPage';
+import { ROUTES }           from '@/shared/routes/routes';
+ 
 export const AppRoutes = () => {
     return (
         <Suspense>
@@ -22,6 +23,10 @@ export const AppRoutes = () => {
                 <Route
                   element = {<LoginPage />}
                   path    = {ROUTES.LOGIN}
+                />
+                <Route
+                  element = {<MyStatementsPage />}
+                  path    = {ROUTES.MY_STATEMENTS}
                 />
             </Routes>
         </Suspense>
