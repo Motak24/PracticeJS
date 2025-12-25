@@ -23,27 +23,29 @@ export const LoginPage = () => {
   return (
     <main className = {styles.loginPage}>
 
-    <section className = {styles.loginPage__logo}>
-      <div className = {styles.loginPage__logoWrapper}>
-        <LogoIcon />
-        <h1 className = {styles.loginPage__logoText}>
-          Портал нарушений
-        </h1>
-      </div>
-    </section>
+      <Link to = "/" className = {styles.loginPage__logo}>
+        <section >
+          <div className = {styles.loginPage__logoWrapper}>
+            <LogoIcon />
+            <h1 className = {styles.loginPage__logoText}>
+              Портал нарушений
+            </h1>
+          </div>
+        </section>
+      </Link>
 
       <section className = {styles.loginPage__content}>
-        <h1 className = {styles.loginPage__title}>Log In</h1>
+        <h1 className = {styles.loginPage__title}>Войти</h1>
         <form className = {styles.loginPage__form}>
           <Input
-            placeholder = "Email"
+            placeholder = "Почта"
             onChange    = {(value) => setEmail(value)}
             value       = {email}
             type        = "text"
             showClear
           />
           <Input
-            placeholder = "Password"
+            placeholder = "Пароль"
             onChange    = {(value) => setPassword(value)}
             value       = {password}
             type        = "password"
@@ -55,13 +57,17 @@ export const LoginPage = () => {
           size      = "l"
           className = {styles.loginButton}
           >
-            Log In
+            Войти
             <ArrowRightIcon />
           </Button>
           
         </form>
-        <p> Don`t already have an account?</p>
-        <Link to = "/register">Create an account</Link>
+
+        <div className = {styles. loginPage__footer}>
+        <p> Нет аккаунта? </p>
+        <Link to = "/register">Регистрация</Link>
+        </div>
+
       </section>
     </main>
   )

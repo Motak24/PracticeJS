@@ -19,24 +19,27 @@ export const SignupPage = () => {
 
   return (
     <main className = {styles.signupPage}>
-      <header className = {styles.signupPage__header}>
-        <LogoIcon />
-        <span className = {styles.signupPage__appName}>Портал нарушений</span>
-      </header>
+
+      <Link to = '/' className = {styles.signupPage__header}>
+        <header className = {styles.signupPage__header}>
+          <LogoIcon />
+          <span className = {styles.signupPage__appName}>Портал нарушений</span>
+        </header>
+      </Link>  
 
       <section className = {styles.signupPage__card}>
-        <h1 className = {styles.signupPage__title}>Sign Up</h1>
+        <h1 className = {styles.signupPage__title}>Регистрация</h1>
 
         <form className = {styles.signupPage__form}>
           <div className = {styles.signupPage__row}>
             <Input
-              placeholder = "First Name"
+              placeholder = "Имя"
               onChange    = {setFirstName}
               value       = {firstName}
               showClear
             />
             <Input
-              placeholder = "Last Name"
+              placeholder = "Фамилия"
               onChange    = {setLastName}
               value       = {lastName}
               showClear
@@ -44,7 +47,7 @@ export const SignupPage = () => {
           </div>
 
           <Input
-            placeholder = "Email Address"
+            placeholder = "Адрес электронной почты"
             onChange    = {setEmail}
             value       = {email}
             type        = "email"
@@ -52,7 +55,7 @@ export const SignupPage = () => {
           />
 
           <Input
-            placeholder = "Create a Password"
+            placeholder = "Придумайте пароль"
             onChange    = {setPassword}
             value       = {password}
             type        = "password"
@@ -60,7 +63,7 @@ export const SignupPage = () => {
           />
 
           <Input
-            placeholder = "Confirm Password"
+            placeholder = "Повторите пароль"
             onChange    = {setConfirm}
             value       = {confirm}
             type        = "password"
@@ -73,16 +76,16 @@ export const SignupPage = () => {
             onClick   = {handleSubmit}
             size      = "l"
           >
-            Sign Up
+            Зарегистрироваться
             <ArrowRightIcon />
           </Button>
         </form>
 
-        <p className={styles.signupPage__footer}>
-          Already have an account?
-        </p>
+         <div className={styles.signupPage__footer}>
+         <p>Уже зарегистрированы? </p> 
+          <Link to="/login">Войти</Link>
+         </div>
         
-          <Link to="/login">Log In</Link>
       </section>
     </main>
   )

@@ -2,38 +2,110 @@
 @use '../../../App/styles/variables/colors';
 
 .homePage {
+  font-family: fonts.$font-family-main;
+
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: colors.$gray-scale--ash;
+}
+
+.homePage__logo {
+  height: 240px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  &__logo {
-    width: 50%;
-    height: 100%;
+.homePage__logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.homePage__logoImage {
+  width: 96px;
+  height: 96px;
+}
 
-  &__logoWrapper {
-    display: flex;
-    align-items: center;
+.homePage__logoText {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 72px;
 
-    gap: 30px;
-  }
+  text-align: center;
+  color: colors.$gray-scale--off-white;
+}
 
-  &__logoImage {
-    width: 92px;
-    height: 92px;
-  }
+.homePage__content {
+  width: 100%;
+  max-width: 860px;
 
-  &__logoText {
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 72px;
-    
-    color: colors.$primary--dark;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+
+  padding: 0 32px 64px;
+}
+
+.homePage__authSection,
+.homePage__guestSection {
+  width: 100%;
+
+  background-color: transparent;
+  border-radius: 24px;
+
+  padding: 48px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  text-align: center;
+}
+
+.homePage__authSection {
+  border: 2px solid colors.$gray-scale--off-white;
+}
+
+
+.homePage__guestSection {
+ border: 2px solid colors.$gray-scale--off-white;
+}
+
+.homePage__title {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600;
+
+  color: colors.$gray-scale--off-white;
+}
+
+.homePage__text {
+  max-width: 520px;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  color: colors.$gray-scale--line;
+}
+
+
+.homePage__actions {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.homePage__link {
+  margin-top: 16px;
+  color: colors.$primary--darkmode;
 }

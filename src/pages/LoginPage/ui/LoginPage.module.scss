@@ -71,6 +71,11 @@
     gap: 24px;
   }
 
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
 .loginButton {
   width: 100%;
