@@ -12,6 +12,14 @@
   align-items: center;
 
   background-color: colors.$gray-scale--ash;
+
+  background-image: url('../../../shared/assets/images/sign-up-page-bg.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .homePage__logo {
